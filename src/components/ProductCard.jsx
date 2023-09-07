@@ -34,10 +34,11 @@ function ProductCard({ singleProduct }) {
           </Typography>
           <Typography
             gutterBottom
-            variant="body1"
+            variant="subtitle1"
             color="text.primary"
             fontWeight="bold"
-            align="right">
+            align="right"
+            sx={{ textTransform: "capitalize" }}>
             {currentProduct.category}
           </Typography>
           <Typography

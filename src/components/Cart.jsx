@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 Cart.propTypes = {
@@ -67,10 +68,14 @@ const BasicTable = ({ products }) => {
             <TableRow
               key={product.productId}
               sx={{
-                "td, th": { borderColor: "#000" },
+                "td, th, a": { color: "text.primary", borderColor: "#000" },
                 "&:last-child td, &:last-child th": { border: 0 },
               }}>
-              <TableCell>{product.productId}</TableCell>
+              <TableCell>
+                <Link to={`/products/${product.productId}`}>
+                  {product.productId}
+                </Link>
+              </TableCell>
               <TableCell align="right">{product.quantity}</TableCell>
             </TableRow>
           ))}
