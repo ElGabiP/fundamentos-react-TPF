@@ -1,14 +1,22 @@
-import './App.css'
-import Persona from './Persona'
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+import Routes from "./components/Routes";
+import Header from "./components/Header";
+
+import "./App.css";
+
+const queryClient = new QueryClient();
 
 function App() {
-  
-
   return (
-    <>
-      <Persona/>
-    </>
-  )
+    <BrowserRouter>
+      <Header />
+      <QueryClientProvider client={queryClient}>
+        <Routes />
+      </QueryClientProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
